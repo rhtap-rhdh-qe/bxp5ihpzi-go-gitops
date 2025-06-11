@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bxp5ihpzi-go-gitops
+  description: This is GitOps manifest for bxp5ihpzi-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=bxp5ihpzi-go
+    backstage.io/kubernetes-id: bxp5ihpzi-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: bxp5ihpzi-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:bxp5ihpzi-go
